@@ -1,4 +1,4 @@
-module github.com/errm/resque_exporter
+module github.com/cookpad/resque_exporter
 
 go 1.18
 

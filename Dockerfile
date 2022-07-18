@@ -1,12 +1,12 @@
 FROM quay.io/prometheus/golang-builder as builder
 
-COPY . $GOPATH/src/github.com/kaorimatz/resque_exporter
-WORKDIR $GOPATH/src/github.com/kaorimatz/resque_exporter
+COPY . $GOPATH/src/github.com/cookpad/resque_exporter
+WORKDIR $GOPATH/src/github.com/cookpad/resque_exporter
 
 RUN make PREFIX=/
 
 FROM quay.io/prometheus/busybox
-MAINTAINER Satoshi Matsumoto <kaorimatz@gmail.com>
+MAINTAINER Ed Robinson <edward-robinson@cookpad.com>
 
 COPY --from=builder /resque_exporter /bin/resque_exporter
 
