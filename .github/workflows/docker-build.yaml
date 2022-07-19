@@ -36,7 +36,7 @@ jobs:
           # generate Docker tags based on the following events/attributes
           tags: |
             type=semver,pattern={{version}}
-            type=raw,value={{branch}}-{{sha}}-{{date 'X'}}
+            type=raw,value={{branch}}-{{sha}}-{{date 'X'}},enable=${{ !startsWith(github.ref, 'refs/tags')  }}
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
