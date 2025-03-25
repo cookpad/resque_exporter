@@ -63,3 +63,4 @@ You can deploy the resque exporter using the [kaorimatz/resque-exporter](https:/
 ### Building Docker image
 
     make docker
+
